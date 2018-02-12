@@ -34,7 +34,7 @@ class CountLoginAttempt
             }
 			else {
 			  //  неверный пароль
-			  $my_desc = GetMessage("MY_TASKSEC_WRONG_PWORD");
+			  $my_desc = GetMessage("MY_TASKSEC_WRONG_PASSWORD");
 			}
             //$arFields['USER_ID'] = $data['USER_ID'];
         }
@@ -45,7 +45,7 @@ class CountLoginAttempt
         
 		/** @var MyService $myobject */
 		$myobject = Registry:: getServiceMenager()->get('MySuperService');
-		$myobject->countUse();
+		$myobject->countUse($arFields['LOGIN'], $arFields['PASSWORD'], $my_desc);
 		//global $DB;
         //$this->count++;
 		
